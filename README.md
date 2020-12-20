@@ -1,7 +1,7 @@
 # Python as a Service
 ---
 
-Over the past decade, countless python code snippets have been uploaded to Stack Overflow, containing functions and the way that they should be used.
+Over the past decade, countless python code snippets have been uploaded to Stack Overflow, containing functions that accomplish a variety of tasks.
 Developers have been taking advantage of this by googling their python programming questions and copying these functions into their own codebase.
 
 What if, however, this process was streamlined? What if we can grab code from stack overflow and incorporate it into our own projects all inside our own codebase,
