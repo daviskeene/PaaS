@@ -22,6 +22,10 @@ class PaaS:
         if fn_name in self.fns:
             return self.fns[fn_name]
 
+    def printFns(self):
+        retval = ",".join(list(self.fns.keys()))
+        print(f"Functions available: {retval}")
+
     def addFnFromStackOverflow(self, query):
         # We need to first look up the querystring in a google search
         urls = search(f"stackoverflow python {query}", num=5, stop=10)
@@ -112,3 +116,4 @@ if __name__ == "__main__":
     # Find out what to name our function variable
     print(p.getHelpText(second_smallest_fn))
     print(p.getFn(second_smallest_fn)([1,2,3,4,5]))
+    p.printFns()
