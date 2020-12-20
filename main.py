@@ -45,8 +45,8 @@ class PaaS:
                         return fn
     
     def getFnFromStackOverflow(self, query):
-        fn = addFnFromStackOverflow(query)
-        return fn, self.fns[fn]
+        fn = self.addFnFromStackOverflow(query)
+        return self.fns[fn]
     
     def getHelpText(self, fn_name):
         if fn_name in self.fns:
@@ -98,18 +98,19 @@ if __name__ == "__main__":
     Just a quick demo :)
     """
     p = PaaS()
-    # fizz = p.addFnFromStackOverflow(query="fizzbuzz")
-    # fizzbuzz = p.getFn(fizz)
-    # # How do we use this function?
-    # print(p.getHelpText(fizz))
-    # # We can actually use this code now!
-    # print(fizzbuzz(3))
+    fizz = p.addFnFromStackOverflow(query="fizzbuzz")
+    fizzbuzz = p.getFn(fizz)
+    # How do we use this function?
+    print(p.getHelpText(fizz))
+    # We can actually use this code now!
+    print(fizzbuzz(3))
 
-    # fib = p.addFnFromStackOverflow(query="fibonacci")
-    # F = p.getFn(fib)
-    # print(p.getHelpText(fib))
-    # print(F(5))
-    # print(p.fns[fib])
+    fib = p.addFnFromStackOverflow(query="fibonacci")
+    # For recursive functions, you _need_ to define the function inline
+    F = p.getFn(fib)
+    print(p.getHelpText(fib))
+    print(F(5))
+    print(p.fns[fib])
 
     # Get second smallest number from list
     second_smallest_fn = p.addFnFromStackOverflow("find second smallest number in list")
